@@ -8,7 +8,7 @@ const app = Vue.createApp({
         };
     },
     methods: {
-        ageInFive: function(age) {
+        ageInFive: function() {
             return this.age + 5;
         },
         getAge: function() {
