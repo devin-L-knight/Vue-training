@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            result: 0
         }
     }
 });
