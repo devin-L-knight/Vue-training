@@ -3,8 +3,20 @@ const app = Vue.createApp({
       return {
         counter: 0,
         name: '',
+        fullName: ''
         // confirmedName: ''
       };
+    },
+    watch: {
+        // when the name data property changes...this watcher will be executed automatically by Vue.js when the property changes
+        name(value) {
+            if (value === '') {
+                console.log('Empty Input...')
+            } else {
+                this.fullName = value + ' ' + 'Knight';
+                console.log('NAME WAS CHANGED...')
+            }
+        }
     },
     computed: {
         fullName: function() {
