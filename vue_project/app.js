@@ -37,13 +37,9 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        addFive: function() {
-            // console.log('addFive has run...');
-            this.result = this.result + 5;
-        },
-        addOne: function() {
-            // console.log('addOne has run....');
-            this.result++;
+        addNum: function(num) {
+            this.result = this.result + num;
+            console.log('ADD CALLED...result is: ', this.result);
         }
     }
 });
