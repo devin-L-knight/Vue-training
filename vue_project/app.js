@@ -6,6 +6,16 @@ const app = Vue.createApp({
         // confirmedName: ''
       };
     },
+    computed: {
+        fullName: function() {
+            console.log('RUNNING AGAIN...') // (using this computed property in place of the outputFullName method...so it's only called when we want instead of called every time something changes on the screen).
+            if (this.name === '') {
+                return '';
+            } else {
+                return this.name + ' ' + 'Knight';
+            }
+        }
+    },
     methods: {
         increaseCount: function(num) {
             this.counter = this.counter + num;
