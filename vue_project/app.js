@@ -9,7 +9,7 @@ const app = Vue.createApp({
         message(value) {
             // whenever message has a new value...we'll trigger this watcher
             // console.log('Timer started');
-            console.log('value >>> ', value);
+            // console.log('value >>> ', value);
             const that = this
             setTimeout(() => {
                 that.result = 0;
@@ -33,7 +33,7 @@ const app = Vue.createApp({
     methods: {
         addNum: function(num) {
             this.result = this.result + num;
-            console.log('ADD CALLED...result is: ', this.result);
+            // console.log('ADD CALLED...result is: ', this.result);
         }
     }
 });
