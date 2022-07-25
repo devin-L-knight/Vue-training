@@ -18,6 +18,14 @@ const app = Vue.createApp({
             // (this is picked up from v-on:input event listener in index.html)
             this.name = evt.target.value;
         },
+        outputFullName: function() {
+            console.log('RUNNING AGAIN...') // (check console to see that this runs every time something happens on the screen...which is a default Vue.js behavior).
+            if (this.name === '') {
+                return '';
+            } else {
+                return this.name + ' ' + 'Knight';
+            }
+        },
         submitForm: function() {
             alert('Form Submitted!');
         },
