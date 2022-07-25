@@ -5,6 +5,16 @@ const app = Vue.createApp({
             isHidden: false,
         }
     },
+    computed: {
+        pTagClasses() {
+            return {
+                user1: this.enteredClass === 'user1',
+                user2: this.enteredClass === 'user2',
+                hidden: this.isHidden,
+                visible: !this.isHidden
+            }
+        }
+    },
     methods: {
         addClass(evt) {
             console.log('EVENT >>> ', evt);
