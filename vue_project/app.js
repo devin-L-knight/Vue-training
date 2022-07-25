@@ -17,8 +17,7 @@ const app = Vue.createApp({
             // (this is picked up from v-on:input event listener in index.html)
             this.name = evt.target.value;
         },
-        submitForm: function(evt) {
-            evt.preventDefault();
+        submitForm: function() {
             alert('Form Submitted!');
         }
     }
