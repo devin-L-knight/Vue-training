@@ -3,7 +3,7 @@ const app = Vue.createApp({
       return {
         counter: 0,
         name: '',
-        confirmedName: ''
+        // confirmedName: ''
       };
     },
     methods: {
@@ -21,12 +21,12 @@ const app = Vue.createApp({
         submitForm: function() {
             alert('Form Submitted!');
         },
-        confirmInput: function() {
-            this.confirmedName = this.name;
-        },
+        // confirmInput: function() {
+        //     this.confirmedName = this.name;
+        // },
         resetInput: function() {
             this.name = ''; // resets the name that is shown in the input field
-            this.confirmedName = '';    // resets the value that is stored in the <p> tag
+            // this.confirmedName = '';    // resets the value that is stored in the <p> tag
         }
     }
   });
