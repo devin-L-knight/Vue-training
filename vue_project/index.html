@@ -9,7 +9,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <!-- Adding Vue Script to our HTML here so we can use vue without the build tools -->
     <script src="https://unpkg.com/vue@next" defer></script>
     <script src="app.js" defer></script>
   </head>
@@ -17,11 +16,14 @@
     <header>
       <h1>Vue Course Goals</h1>
     </header>
-    <section id="user-goal">
-      <h2>My Course Goal</h2>
-      <!-- <p v-html="outputGoal()"></p> -->
-      <p> {{ outputGoal() }}</p>
-      <p>Learn more about <a v-bind:href="vueLink">Vue.js</a></p>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" />
+      <button>Add Goal</button>
+      <p>No goals have been added yet - please start adding some!</p>
+      <ul>
+        <li>Goal</li>
+      </ul>
     </section>
   </body>
 </html>
