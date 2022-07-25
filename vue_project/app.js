@@ -23,9 +23,12 @@ const app = Vue.createApp({
         },
         confirmInput: function() {
             this.confirmedName = this.name;
+        },
+        resetInput: function() {
+            this.name = ''; // resets the name that is shown in the input field
+            this.confirmedName = '';    // resets the value that is stored in the <p> tag
         }
     }
   });
   
   app.mount('#events');
-  
