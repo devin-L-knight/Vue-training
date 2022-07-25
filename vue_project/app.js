@@ -6,20 +6,20 @@ const app = Vue.createApp({
         }
     },
     watch: {
-        // result(value) {
-        //     // console.log('Timer started');
-        //     // setTimeout((value) => {
-        //     //     console.log('result is >>>>>> : ', value)
-        //     //     value = 0;
-        //     // }, 5000)
-        //     if (value > 0) {
-        //         console.log('TIMER HAS STARTED...')
-        //         setTimeout(() => {
-        //             this.result = 0;
-        //             console.log('result reset to zero');
-        //         }, 5000)
-        //     }
-        // }
+        result(value) {
+            // console.log('Timer started');
+            // setTimeout((value) => {
+            //     console.log('result is >>>>>> : ', value)
+            //     value = 0;
+            // }, 5000)
+            if (value > 0) {
+                console.log('TIMER HAS STARTED...')
+                setTimeout(() => {
+                    this.result = 0;
+                    console.log('result reset to zero');
+                }, 5000)
+            }
+        }
     },
     computed: {
         displayMessage: function() {
@@ -38,11 +38,11 @@ const app = Vue.createApp({
     },
     methods: {
         addFive: function() {
-            console.log('addFive has run...');
+            // console.log('addFive has run...');
             this.result = this.result + 5;
         },
         addOne: function() {
-            console.log('addOne has run....');
+            // console.log('addOne has run....');
             this.result++;
         }
     }
