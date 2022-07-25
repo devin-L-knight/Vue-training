@@ -3,6 +3,7 @@ const app = Vue.createApp({
         return {
             enteredClass: '',
             isHidden: false,
+            enteredColor: ''
         }
     },
     computed: {
@@ -24,6 +25,11 @@ const app = Vue.createApp({
         },
         applyHidden(evt) {
             this.isHidden = !this.isHidden;
+        },
+        addColor(evt) {
+            if (evt.target.value) {
+                this.enteredColor = evt.target.value
+            }
         }
     }
 });
