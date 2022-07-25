@@ -2,6 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             enteredClass: '',
+            isHidden: false,
         }
     },
     methods: {
@@ -11,7 +12,9 @@ const app = Vue.createApp({
                 this.enteredClass = evt.target.value
             }
         },
-
+        applyHidden(evt) {
+            this.isHidden = !this.isHidden;
+        }
     }
 });
 
