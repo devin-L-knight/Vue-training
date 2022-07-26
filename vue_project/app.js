@@ -51,6 +51,7 @@ const app = Vue.createApp({
   app.mount('#user-goals');
   
 
+  // SET TIMEOUT IS TO CHECK THE UNMOUNT METHOD. (DON'T FORGET TO REMOVE / COMMENT OUT WHEN REVIEWING APP).
   setTimeout(() => {
     // this is rarely used, but is a way to unmount an app
     app.unmount('#user-goals');
