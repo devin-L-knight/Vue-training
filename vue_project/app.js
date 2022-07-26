@@ -21,7 +21,7 @@ const app = Vue.createApp({
         },
         enableSpecialAttack() {
             return this.currentRound % 3 !== 0;
-        }
+        },
     },
     methods: {
         attackMonster() {
@@ -39,6 +39,15 @@ const app = Vue.createApp({
             this.monsterHealth = this.monsterHealth - specialAttackDamage
             this.currentRound++; // increment the round by one
             this.attackPlayer(); // attack the player by default after special attack
+        },
+        healPlayer() {
+            const healValue = getRandomDamage(10, 24);
+            if (this.playerHealth + healValue > 100) {
+                this.playerHealth = 100;
+            } else {
+                this.playerHealth = this.playerHealth + healValue;
+            }
+            this.attackPlayer(); // attack the player by default after the monster is attacked
         }
     }
 });
