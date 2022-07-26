@@ -1,21 +1,19 @@
 const app = Vue.createApp({
     data() {
-        return {
-            goals: [],
-            enteredGoal: '',
-        };
+      return {
+        currentUserInput: '',
+        message: 'Vue is great!',
+      };
     },
     methods: {
-        addNewGoal() {
-            this.goals.push(this.enteredGoal);
-
-            console.log('GOALS >>>> ', this.enteredGoal);
-        },
-        removeGoal(idx) {
-            this.goals.splice(idx, 1); // remove the element from the array at the given index
-        }
-    }
+      saveInput(event) {
+        this.currentUserInput = event.target.value;
+      },
+      setText() {
+        this.message = this.currentUserInput;
+      },
+    },
   });
   
-  app.mount('#user-goals');
+  app.mount('#app');
   

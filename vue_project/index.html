@@ -14,27 +14,13 @@
   </head>
   <body>
     <header>
-      <h1>Vue Course Goals</h1>
+      <h1>Vue Behind The Scenes</h1>
     </header>
-    <section id="user-goals">
-      <h2>My course goals</h2>
-      <input type="text" v-model="enteredGoal" />
-      <button @click="addNewGoal">Add Goal</button>
-      <p v-if="!goals.length" >No goals have been added yet - please start adding some!</p>
-      <ul v-else>
-        <li v-for="(goal, idx) in goals" :key="goal" @click="removeGoal(idx)">
-          <p>{{ goal }}</p>
-          <input type="text" @click.stop>
-        </li>
-      </ul>
-      <!-- <p >Iterating through test object below:</p>
-      <ul>
-        <li v-for="(value, key) in { name: 'Max', age: 31 }">{{ key }} : {{ value }}</li>
-      </ul>
-      <p >Using v-for to iterate through numbers:</p>
-      <ul>
-        <li v-for="num in 10">{{ num }}</li>
-      </ul> -->
+    <section id="app">
+      <h2>How Vue Works</h2>
+      <input type="text" @input="saveInput">
+      <button @click="setText">Set Text</button>
+      <p>{{ message }}</p>
     </section>
   </body>
 </html>
