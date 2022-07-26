@@ -18,14 +18,9 @@
     </header>
     <section id="app">
       <ul>
-        <li v-for="friend in friends" :key="friend.id">
-          <h2>{{ friend.name }}</h2>
-          <button @click="toggleDetails">{{ detailsVisible ? 'Hide Details' : 'Show Details' }}</button>
-          <ul v-if="detailsVisible">
-            <li><strong>Phone:</strong> {{ friend.phone }}</li>
-            <li><strong>Email:</strong> {{ friend.email }}</li>
-          </ul>
-        </li>
+        <!-- This is the special HTML tag that's our component (like styled components) -->
+        <friend-contact></friend-contact>
+        <friend-contact></friend-contact>
       </ul>
     </section>
   </body>
