@@ -29,7 +29,7 @@
       <!-- 3) When the below button is pressed, the list should be shown or hidden -->
       <!-- BONUS: Also update the button caption -->
       <br>
-      <button @click="hideList">Hide / Show List</button>
+      <button v-if="tasks.length !== 0" @click="hideList">{{ buttonMsg }}</button>
     </section>
   </body>
 </html>

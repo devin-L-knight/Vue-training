@@ -3,7 +3,8 @@ const app = Vue.createApp({
         return {
             tasks: [],
             enteredTask: '',
-            hiddenList: false
+            hiddenList: false,
+            buttonMsg: 'Hide List'
         }
     },
     methods: {
@@ -20,6 +21,11 @@ const app = Vue.createApp({
         },
         hideList() {
             this.hiddenList = !this.hiddenList;
+
+            this.updateButtonText(); // call the updateButtonText method to adjust our button text
+        },
+        updateButtonText() {
+            this.hiddenList ? this.buttonMsg = 'Show List' : this.buttonMsg = 'Hide List'
         }
     }
 })
