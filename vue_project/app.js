@@ -74,6 +74,12 @@ const app = Vue.createApp({
                 this.playerHealth = this.playerHealth + healValue;
             }
             this.attackPlayer(); // attack the player by default after the monster is attacked
+        },
+        startNewGame() {
+            this.monsterHealth = 100;
+            this.playerHealth = 100;
+            this.currentRound = 0;
+            this.winner = null;
         }
     }
 });
