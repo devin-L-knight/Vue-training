@@ -22,16 +22,16 @@
       <button @click="addNewGoal">Add Goal</button>
       <p v-if="!goals.length" >No goals have been added yet - please start adding some!</p>
       <ul v-else>
-        <li v-for="(goal, idx) in goals">{{ goal }} - {{ idx }}</li>
+        <li v-for="(goal, idx) in goals" @click="removeGoal(idx)">{{ goal }}</li>
       </ul>
-      <p >Iterating through test object below:</p>
+      <!-- <p >Iterating through test object below:</p>
       <ul>
         <li v-for="(value, key) in { name: 'Max', age: 31 }">{{ key }} : {{ value }}</li>
       </ul>
       <p >Using v-for to iterate through numbers:</p>
       <ul>
         <li v-for="num in 10">{{ num }}</li>
-      </ul>
+      </ul> -->
     </section>
   </body>
 </html>

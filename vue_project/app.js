@@ -10,6 +10,9 @@ const app = Vue.createApp({
             this.goals.push(this.enteredGoal);
 
             console.log('GOALS >>>> ', this.enteredGoal);
+        },
+        removeGoal(idx) {
+            this.goals.splice(idx, 1); // remove the element from the array at the given index
         }
     }
   });
