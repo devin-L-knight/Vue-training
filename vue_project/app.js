@@ -7,7 +7,11 @@ const app = Vue.createApp({
     },
     methods: {
         addTask() {
-            console.log('entered task ? ', this.enteredTask);
+            // console.log('entered task ? ', this.enteredTask);
+            this.tasks.push(this.enteredTask);
+
+            // console.log('ARRAY ??? ', this.tasks);
+            // console.log('is array? ', Array.isArray(this.tasks))
         }
     }
 })
