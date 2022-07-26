@@ -26,7 +26,7 @@
       </ul>
       <p >Iterating through test object below:</p>
       <ul>
-        <li v-for="value in { name: 'Max', age: 31 }">{{ value }}</li>
+        <li v-for="(value, key) in { name: 'Max', age: 31 }">{{ key }} : {{ value }}</li>
       </ul>
     </section>
   </body>
