@@ -2,7 +2,8 @@ const app = Vue.createApp({
     data() {
         return {
             tasks: [],
-            enteredTask: ''
+            enteredTask: '',
+            hiddenList: false
         }
     },
     methods: {
@@ -16,6 +17,9 @@ const app = Vue.createApp({
         },
         removeTask(index) {
             this.tasks.splice(index, 1); // remove the task from the list at the given index
+        },
+        hideList() {
+            this.hiddenList = !this.hiddenList;
         }
     }
 })
