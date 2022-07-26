@@ -55,19 +55,19 @@ const app = Vue.createApp({
             const monsterDamage = getRandomDamage(5, 16); // create a random number between 5 - 17            
             this.monsterHealth = this.monsterHealth - monsterDamage;
             this.currentRound++; // increment the round by one
-            this.addLogMessage('Player', 'attacked', monsterDamage);
+            this.addLogMessage('player', 'attacked', monsterDamage);
             this.attackPlayer(); // attack the player by default after the monster is attacked
         },
         attackPlayer() {
             const playerDamage = getRandomDamage(9, 18); // create a random number between 9 - 21
             this.playerHealth = this.playerHealth - playerDamage;
-            this.addLogMessage('Monster', 'attacked', playerDamage);
+            this.addLogMessage('monster', 'attacked', playerDamage);
         },
         specialAttack() {
             const specialAttackDamage = getRandomDamage(12, 27);
             this.monsterHealth = this.monsterHealth - specialAttackDamage
             this.currentRound++; // increment the round by one
-            this.addLogMessage('Player', 'used Special Attack', specialAttackDamage);
+            this.addLogMessage('player', 'used Special Attack', specialAttackDamage);
             this.attackPlayer(); // attack the player by default after special attack
         },
         healPlayer() {
@@ -77,7 +77,7 @@ const app = Vue.createApp({
             } else {
                 this.playerHealth = this.playerHealth + healValue;
             }
-            this.addLogMessage('Player', 'healed', healValue);
+            this.addLogMessage('player', 'healed', healValue);
             this.attackPlayer(); // attack the player by default after the monster is attacked
         },
         startNewGame() {
@@ -89,19 +89,27 @@ const app = Vue.createApp({
         },
         surrender() {
             this.winner = 'Monster';
-            this.addLogMessage('Player', 'surrendered')
+            this.addLogMessage('player', 'surrendered')
         },
         addLogMessage(who, what, value = '') {
-            let attackLog = '';
-            if (what === 'healed') {
-                attackLog = `${who} ${what} and gained ${value} life`
-            } else if (what === 'surrendered') {
-                attackLog = `${who} ${what}.`
-            } else {
-                attackLog = `${who} ${what} and inflicted ${value} damage`
-            }
-            // add the message to the beginning of the logs array
-            this.battleLogs.unshift(attackLog);
+            // ================== Using Template Literal ====================
+            // let attackLog = '';
+            // if (what === 'healed') {
+            //     attackLog = `${who} ${what} and gained ${value} life`
+            // } else if (what === 'surrendered') {
+            //     attackLog = `${who} ${what}.`
+            // } else {
+            //     attackLog = `${who} ${what} and inflicted ${value} damage`
+            // }
+            // // add the message to the beginning of the logs array
+            // this.battleLogs.unshift(attackLog);
+            // =============================================================
+
+            this.battleLogs.unshift({
+                actionBy: who,
+                actionType: what,
+                actionValue: value
+            })
         }
     }
 });
