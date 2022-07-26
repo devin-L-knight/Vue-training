@@ -14,7 +14,15 @@ const app = Vue.createApp({
                     phone: '818-543-2211',
                     email: 'julie@localhost.com'
                 }
-            ]
+            ],
+            detailsVisible: false
+        }
+    },
+    methods: {
+        toggleDetails() {
+            console.log('fired');
+            this.detailsVisible = !this.detailsVisible;
+            console.log(this.detailsVisible);
         }
     }
 });
