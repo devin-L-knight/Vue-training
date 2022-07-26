@@ -24,6 +24,10 @@
       <ul v-else>
         <li v-for="(goal, idx) in goals">{{ goal }} - {{ idx }}</li>
       </ul>
+      <p >Iterating through test object below:</p>
+      <ul>
+        <li v-for="value in { name: 'Max', age: 31 }">{{ value }}</li>
+      </ul>
     </section>
   </body>
 </html>
