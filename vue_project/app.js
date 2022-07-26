@@ -32,10 +32,18 @@ const app = Vue.createApp({
     },
     computed: {
         monsterBarStyles() {
-            return { width: this.monsterHealth + '%' }
+            if (this.monsterHealth <= 0) {
+                return { width: 0 }
+            } else {
+                return { width: this.monsterHealth + '%' }
+            }
         },
         playerBarStyles() {
-            return { width: this.playerHealth + '%' }
+            if (this.playerHealth <= 0) {
+                return { width: 0}
+            } else {
+                return { width: this.playerHealth + '%' }
+            }
         },
         enableSpecialAttack() {
             return this.currentRound % 3 !== 0;
