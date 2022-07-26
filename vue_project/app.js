@@ -31,11 +31,11 @@ const app = Vue.createApp({
             this.attackPlayer(); // attack the player by default after the monster is attacked
         },
         attackPlayer() {
-            const playerDamage = getRandomDamage(9, 19); // create a random number between 9 - 21
+            const playerDamage = getRandomDamage(9, 18); // create a random number between 9 - 21
             this.playerHealth = this.playerHealth - playerDamage;
         },
         specialAttack() {
-            const specialAttackDamage = getRandomDamage(10, 25);
+            const specialAttackDamage = getRandomDamage(12, 27);
             this.monsterHealth = this.monsterHealth - specialAttackDamage
             this.currentRound++; // increment the round by one
             this.attackPlayer(); // attack the player by default after special attack
