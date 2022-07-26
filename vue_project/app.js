@@ -13,6 +13,9 @@ const app = Vue.createApp({
 
             // console.log('ARRAY ??? ', this.tasks);
             // console.log('is array? ', Array.isArray(this.tasks))
+        },
+        removeTask(index) {
+            this.tasks.splice(index, 1); // remove the task from the list at the given index
         }
     }
 })
